@@ -1,0 +1,5 @@
+C++ is multi-paradigm programming language.
+	- POP (Procedure Oriented Language)
+	- OOP (Object Oriented Language)
+
+Every C program is a C++ program but the opposite is not true.
