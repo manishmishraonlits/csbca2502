@@ -1,7 +1,7 @@
-#include <stdio.h>
-
+#include <iostream>
+using namespace std;
 int main(void)
 {
-    printf("Hello World!");
+    cout << "Hello World!";        //insertion operator or put to operator
     return 0;
 }
