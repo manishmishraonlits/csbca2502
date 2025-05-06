@@ -41,8 +41,8 @@ public:
 int main(void)
 {
     date d1;
-    int a;
-    int arr[10];
+    int a = 10;
+    int arr[10] = {10, 20, 30};
     date d2(1, 1, 2000);    // create an object of date class
     d2.setDate(2, 2, 2002); // set the date to 2/2/2002
     // date d3 = d2.getDate(); // get the date from the object
