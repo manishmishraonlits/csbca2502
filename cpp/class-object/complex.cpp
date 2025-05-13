@@ -1,9 +1,10 @@
-#include <iostream>
+#include <iostream>     // File Inclusion
 
 using namespace std;
 
 class complex
 {
+private:
     float real;
     float imaginary;
 
