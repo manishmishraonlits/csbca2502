@@ -1,13 +1,19 @@
 #include <iostream>
 
 using namespace std;
-
-class worker
+class employee
 {
-private:
+protected:
     int id;
     string name;
     string designation;
+
+public:
+};
+
+class worker : employee
+{
+private:
     float hours;
     float wage;
     float overtime;
@@ -37,12 +43,9 @@ void worker::display()
     cout << "Overtime: " << overtime << endl;
 }
 
-class manager
+class manager : employee
 {
 private:
-    int id;
-    string name;
-    string designation;
     int days;
     float salary;
     float incentive;
@@ -74,11 +77,12 @@ void manager::display()
 
 int main(void)
 {
-    worker w(1, "Ratan Lal", "Foreman", 36.0F, 3600.0F, 0.0F);
-    manager m(5, "Rakesh Kumar", "Asst. Sales Manager", 23, 15000.0F, 2000.0F);
+    worker *w =  new worker(1, "Ratan Lal", "Foreman", 36.0F, 3600.0F, 0.0F);
+    manager *m = new manager(5, "Rakesh Kumar", "Asst. Sales Manager", 23, 15000.0F, 2000.0F);
     cout << "WORKDER DETAILS: " << endl;
-    w.display();
-    cout << endl << "MANAGER DETAILS: " << endl;
-    m.display();
+    w->display();
+    cout << endl
+         << "MANAGER DETAILS: " << endl;
+    m->display();
     return 0;
 }
