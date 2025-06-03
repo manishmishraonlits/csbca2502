@@ -1,7 +1,7 @@
 #include <iostream>
 
 using namespace std;
-class employee
+class employee // base class
 {
 protected:
     int id;
@@ -9,9 +9,10 @@ protected:
     string designation;
 
 public:
+    virtual void display() = 0;     // pure virtual function
 };
 
-class worker : employee
+class worker : public employee // derived class
 {
 private:
     float hours;
@@ -43,7 +44,7 @@ void worker::display()
     cout << "Overtime: " << overtime << endl;
 }
 
-class manager : employee
+class manager : public employee // derived class
 {
 private:
     int days;
@@ -77,12 +78,17 @@ void manager::display()
 
 int main(void)
 {
-    worker *w =  new worker(1, "Ratan Lal", "Foreman", 36.0F, 3600.0F, 0.0F);
-    manager *m = new manager(5, "Rakesh Kumar", "Asst. Sales Manager", 23, 15000.0F, 2000.0F);
-    cout << "WORKDER DETAILS: " << endl;
-    w->display();
+    employee *e = NULL; // base class pointer
+    e = new worker(1, "Ratan Lal", "Foreman", 36.0F, 3600.0F, 0.0F);
+
+    cout << "WORKER DETAILS: " << endl;
+    e->display();
+
+    e = new manager(5, "Rakesh Kumar", "Asst. Sales Manager", 23, 15000.0F, 2000.0F);
     cout << endl
          << "MANAGER DETAILS: " << endl;
-    m->display();
+    e->display();
+
+    delete e;
     return 0;
 }
